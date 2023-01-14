@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-file: 1-hbnb_route.py
+file: 3-python_route.py
 desc: This module runs a simple flask app.
 Author: Gizachew Bayness (Elec Crazy)
 Date Created: Nov 10, 2022
@@ -20,6 +20,19 @@ def hello_hbnb():
 def hbnb():
     """Displays 'HBNB' from the /hbnb path"""
     return "HBNB"
+
+
+@app.route("/c/<text>", strict_slashes=False)
+def ctext(text):
+    """Displays C <text>, replaces any _ with space"""
+    return "C {}".format(text.replace("_", " "))
+
+
+@app.route("/python", strict_slashes=False)
+@app.route("/python/<text>", strict_slashes=False)
+def pythontext(text="is cool"):
+    """Displays 'Python <text>', replaces any _ with space"""
+    return "Python {}".format(text.replace("_", " "))
 
 
 if __name__ == "__main__":

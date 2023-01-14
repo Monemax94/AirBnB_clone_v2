@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-file: 0-hello_route.py
+file: 2-c_route.py
 desc: This module runs a simple flask app.
 Author: Gizachew Bayness (Elec Crazy)
 Date Created: Nov 10, 2022
@@ -14,6 +14,18 @@ app = Flask(__name__)
 def hello_hbnb():
     """Displays 'Hello HBNB! from the root path"""
     return "Hello HBNB!"
+
+
+@app.route("/hbnb", strict_slashes=False)
+def hbnb():
+    """Displays 'HBNB' from the /hbnb path"""
+    return "HBNB"
+
+
+@app.route("/c/<text>", strict_slashes=False)
+def ctext(text):
+    """Displays C <text>, replaces any _ with space"""
+    return "C {}".format(text.replace("_", " "))
 
 
 if __name__ == "__main__":
