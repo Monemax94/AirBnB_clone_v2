@@ -2,8 +2,8 @@
 """
 file: 1-hbnb_route.py
 desc: This module runs a simple flask app.
-Author: Gizachew Bayness (Elec Crazy)
-Date Created: Nov 10, 2022
+Author: Monday odoh (Monemax)
+Date Created: January 14 2023
 """
 from flask import Flask
 
